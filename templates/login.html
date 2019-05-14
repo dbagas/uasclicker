@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+    <section class="feature_area p_120">
+          <div class="container">
+            <div class="main_title">
+          <div class="banner_content text-center">
+            <h2>Login</h2>
+
+        <h3>Silahkan login untuk menggunakan aplikasi ini</h3>
+     
+
+        <form method="post" action="{{ url_for('login')}}">
+        <div>
+          Username:
+          <div class="form-group">
+            <input type="text" class="form-control" id="username" placeholder="Masukkan username anda" name="username" align="center" required>
+          </div>
+        </div>
+        <div>
+          Session Code:
+          <div class="form-group">
+            <input type="text" align="center" class="form-control" id="session_code" placeholder="Masukkan SessionCode" name="session_code" required>
+          </div>
+        </div>
+        <div class="form-group">        
+          <div class="col-sm-offset-2 col-sm-12 text-right">
+            <button type="submit" class="btn btn-outline-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+    </div>
+    
+  </section>        
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Vote
+{% endblock %}
+
+{% block content %}
+<section class="feature_area p_120">
+          <div class="container">
+            <div class="main_title">
+          <div class="banner_content text-center">
+       
+            <a>Name :  {{ username }}   </a><a href="{{ url_for('logout')}}">LogOut</a><br>
+            <a>Soal nomor :  <span id="number">{{ number }}</span></a><br>
+            <a>Session Code :  <span  id="session_code">{{ session_code }}</span><a><br>
+     
+
+        <hr>
+        <div>A Choice: <span id="A">{{ data_response["A"] }}</span></div>
+        <div>B Choice: <span id="B">{{ data_response["B"] }}</span></div>
+        <div>C Choice: <span id="C">{{ data_response["C"] }}</span></div>
+        <div>D Choice: <span id="D">{{ data_response["D"] }}</span></div>
+        <div>E Choice: <span id="E">{{ data_response["E"] }}</span></div>
+        <hr>
+        <button data-response="A">A</button>
+        <button data-response="B">B</button>
+        <button data-response="C">C</button>
+        <button data-response="D">D</button>
+        <button data-response="E">E</button><br>
+        <input data-input="back response" type="button" value="back"/>
+        <input data-input="next response" type="button" value="Next"/>
+
+  </div>
+    </div>
+    </div>
+    
+  </section>
+  {% endblock %}
