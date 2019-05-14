@@ -88,6 +88,17 @@ def logout():
     session.clear()
     return redirect(url_for('index'))
 
+@app.route('/reset', methods=["POST", "GET"])
+@login_required
+def reset():
+    # remove the username from the session if it's there
+    logout_user()
+    session.pop('logged_in', None)
+    session.pop('user_id', None)
+    session.pop('user_name', None)
+    session.clear()
+    data_response = {"A": 0, "B": 0, "C": 0, "D": 0, "E": 0}
+    return redirect(url_for('index'))
 #=============================================
 # SocketIO Route
 #=============================================
