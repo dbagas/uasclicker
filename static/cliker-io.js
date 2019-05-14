@@ -33,10 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // When a new response is announced, add to the unordered list
     socket.on('response totals', data => {
-        console.log(data);
+        var tabel = []
         for (var response in data) {
+            tabel.push(data[response])
             document.querySelector('#' + response).innerHTML = data[response]
         }
+        console.log(tabel);
     });
     socket.on('response number', data => {
         console.log(data);
